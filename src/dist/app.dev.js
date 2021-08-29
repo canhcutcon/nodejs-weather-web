@@ -14,6 +14,7 @@ var geocode = require('./untile/geocode');
 
 var forecast = require('./untile/forecast');
 
+var port = process.env.PORT || 3000;
 var publicDirectoryPath = path.join(__dirname, '../public');
 var viewDirectoryPath = path.join(__dirname, '../template/views');
 var partialPath = path.join(__dirname, '../template/partial');
@@ -54,7 +55,6 @@ app.get('/weather', function (req, res) {
         error: 'Page not found' + error,
         name: 'CANHCUTCON'
       });
-      return error;
     }
 
     forecast(latitude, longtitude, function (error) {
@@ -90,6 +90,6 @@ app.get('*', function (req, res) {
     name: 'CANHCUTCON'
   });
 });
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('post 3000.');
 });

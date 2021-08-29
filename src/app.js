@@ -6,6 +6,8 @@ const hbs = require('hbs');
 const geocode = require('./untile/geocode');
 const forecast = require('./untile/forecast');
 
+const port = process.env.PORT || 3000;
+
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewDirectoryPath = path.join(__dirname, '../template/views');
 const partialPath = path.join(__dirname, '../template/partial');
@@ -44,7 +46,6 @@ app.get('/weather', (req, res) => {
                 error: 'Page not found' + error,
                 name: 'CANHCUTCON'
             })
-            return error;
         }
         forecast(latitude, longtitude, (error, { temperature, precip } = {}) => {
             if (error) {
@@ -76,6 +77,6 @@ app.get('*', (req, res) => {
     })
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('post 3000.');
 })

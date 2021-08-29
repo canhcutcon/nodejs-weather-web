@@ -12,7 +12,7 @@ $('#btnSearch').click(function(e) {
     if (!addLocation) {
         renderError(error);
     } else {
-        fetch('http://localhost:3000/weather?address=' + addLocation + '').then((response) => {
+        fetch('/weather?address=' + addLocation + '').then((response) => {
             response.json().then((data) => {
                 if (data.error) {
                     renderError(data.error);
