@@ -60,7 +60,9 @@ app.get('/weather', function (req, res) {
     forecast(latitude, longtitude, function (error) {
       var _ref2 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
           temperature = _ref2.temperature,
-          precip = _ref2.precip;
+          precip = _ref2.precip,
+          localtime = _ref2.localtime,
+          description = _ref2.description;
 
       if (error) {
         res.render('page404', {
@@ -70,7 +72,7 @@ app.get('/weather', function (req, res) {
       }
 
       res.send({
-        forcast: temperature + ' Clelius .' + precip,
+        forcast: description + ' .' + localtime + ', ' + temperature + ' Clelius .' + precip,
         location: nameplace,
         latitude: latitude,
         longtitude: longtitude

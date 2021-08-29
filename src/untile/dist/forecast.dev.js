@@ -17,7 +17,9 @@ var forecast = function forecast(latitude, longtitude, callback) {
     } else {
       callback(undefined, {
         temperature: body.current.temperature,
-        precip: body.current.precip
+        precip: body.current.precip,
+        localtime: body.location.localtime,
+        description: body.current.weather_descriptions[0]
       });
     }
   });

@@ -47,7 +47,7 @@ app.get('/weather', (req, res) => {
                 name: 'CANHCUTCON'
             })
         }
-        forecast(latitude, longtitude, (error, { temperature, precip } = {}) => {
+        forecast(latitude, longtitude, (error, { temperature, precip, localtime, description } = {}) => {
             if (error) {
                 res.render('page404', {
                     error: 'Page not found' + error,
@@ -55,7 +55,7 @@ app.get('/weather', (req, res) => {
                 })
             }
             res.send({
-                forcast: temperature + ' Clelius .' + precip,
+                forcast: description + ' .' + localtime + ', ' + temperature + ' Clelius .' + precip,
                 location: nameplace,
                 latitude,
                 longtitude
