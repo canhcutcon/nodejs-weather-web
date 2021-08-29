@@ -1,0 +1,46 @@
+.container {
+    max-width: 1140x;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 30px 80px;
+}
+
+header {
+    padding: 30px 80px;
+}
+
+.main-content {
+    padding: 30px 76px;
+    form {
+        margin: 20px 0;
+        .input-group {
+            padding: 15px;
+            width: 400px;
+            border: 1px solid #333333;
+            input {
+                font-size: 20px;
+                padding: 0 79px 0 10px;
+            }
+            button {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.navigation {
+    a {
+        color: grey;
+        font-size: 20px;
+        margin-right: 20px;
+    }
+}
+
+footer {
+    margin: 30px 60px;
+    text-align: right;
+    color: grey;
+}
